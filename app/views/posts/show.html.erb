@@ -26,7 +26,7 @@
       <% end %>
     </div>
 
-    <div class="button-container">
+    <div class="button">
       <% if can? :destroy, @post %>
         <%= button_to "Destroy this post", topic_post_path(@topic, @post), method: :delete, class: "btn btn-danger"%>
       <%end %>
@@ -34,7 +34,7 @@
         <%= link_to "Edit this post", edit_topic_post_path(@topic, @post), class: "btn btn-secondary"%>
       <%end %>
       <%= link_to "View Comments", topic_post_comments_path(@topic, @post), class: "btn btn-primary" %>
-      <br>
+
       <%= link_to "Go back", topic_posts_path, class: "btn btn-success" %>
       <p><strong>Status:</strong> <%= @post.marked_as_read?(current_user) ? 'Read' : 'Unread' %></p>
     </div>
